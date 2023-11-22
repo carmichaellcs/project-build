@@ -34,7 +34,7 @@ Instalando `poetry` para gerenciamento de ambiente e projeto em sua Maquina Loca
 ### Ambiente de Desenvolvimento
 
 Para subir o BackEnd, use o comando:
-> docker-compose up ingap-api
+> docker-compose up acqua-saesa-api
 
 Para matar o processo:
 > docker-compose kill && docker-compose down
@@ -42,7 +42,7 @@ Para matar o processo:
 ### Acessar a documentação do projeto
 
 Para subir o servidor da Doc, use o comando:
-> docker-compose up ingap-doc
+> docker-compose up acqua-saesa-doc
 
 Para matar o processo:
 > docker-compose kill && docker-compose down
@@ -50,13 +50,13 @@ Para matar o processo:
 ### URLs local
 
 Para BackEnd:
-> http://0.0.0.0:3000/
+> http://0.0.0.0:3030/
 
 Para o Swagger:
-> http://0.0.0.0:3000/docs
+> http://0.0.0.0:3030/docs
 
 Para a Documentação:
-> http://0.0.0.0:3030/
+> http://0.0.0.0:3131/
 
 ### Como gerar os arquivos requirements.txt
 
