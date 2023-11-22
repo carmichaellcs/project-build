@@ -1,0 +1,13 @@
+site_name: API
+repo_url: https://github.com/carmichaellcs/
+repo_name: Teste
+edit_uri: tree/main/docs
+
+theme:
+  name: readthedocs
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+markdown_extensions:
+  - attr_list

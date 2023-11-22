@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  acqua-saesa-api:
+    build:
+      dockerfile: ./docker/base.dockerfile
+      context: .
+      args:
+        - API_ENV=dev
+        - API_EXP_PORT=3030
+    container_name: acqua-saesa-api
+    volumes:
+      - ./:/src/app
+    ports:
+      - "3030:3030"
+    command: ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "api.main:app", "--bind", "0.0.0.0:3030"]
+
+  acqua-saesa-doc:
+    build:
+      dockerfile: ./docker/base.dockerfile
+      context: .
+      args:
+        - API_ENV=doc
+        - API_EXP_PORT=3131
+    container_name: acqua-saesa-doc
+    volumes:
+      - ./mkdocs.yml:/src/app/mkdocs.yml
+      - ./docs:/src/app/docs
+    ports:
+      - "3131:3131"
+    command: ["mkdocs", "serve", "-a", "0.0.0.0:3131"]
