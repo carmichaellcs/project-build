@@ -31,7 +31,28 @@ _*Reiniciar a maquina para que as alterações sejam feitas._
 Instalando `poetry` para gerenciamento de ambiente e projeto em sua Maquina Local.
 > curl -sSL https://install.python-poetry.org | python3 -
 
-### Ambiente de Desenvolvimento
+Para acessar o ambiente virtual que o `poetry` fornece, use o comando:
+> poetry shell
+
+Para verificar se o projeto se enquadra dentro das regras da PEP8, use o comando:
+> task lint
+
+Para rodar os Teste, use o comando:
+> task test
+
+_*Ao rodar os testes, está configurado antes passar o `lint` e após o testes irá criar o arquivo `.html` do Coverage._
+
+Para que os `linters` corrija os erros de forma automatica, use:
+
+* **Blue**
+> blue .
+O `Blue` irá garantir as normas da PEP8
+
+* **iSort**
+> isort .
+O `iSort` é responsavel por analisar e corrigir as importações.
+
+### Como subir o container da API
 
 Para subir o BackEnd, use o comando:
 > docker-compose up acqua-saesa-api
@@ -39,7 +60,7 @@ Para subir o BackEnd, use o comando:
 Para matar o processo:
 > docker-compose kill && docker-compose down
 
-### Acessar a documentação do projeto
+### Como subir o container da Documentação
 
 Para subir o servidor da Doc, use o comando:
 > docker-compose up acqua-saesa-doc
